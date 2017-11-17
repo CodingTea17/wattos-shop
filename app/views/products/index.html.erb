@@ -1,6 +1,7 @@
 <div class="row justify-content-center">
-  <div class="col-6">
+  <div class="col-9">
     <h1 class="text-center">Current Inventory</h1>
+    <p class="text-center"><%= link_to "Add a New Product", new_product_path(), :class => "btn btn-success" %></p>
     <div class="digg_pagination mb-2">
       <div class="row justify-content-center">
         <%= will_paginate @products %>
@@ -9,17 +10,26 @@
   <table class="table table-bordered table-hover">
     <thead class="thead-light">
       <tr class="text-center">
-        <th scope="col-5">Name</th>
-        <th scope="col-4">Price (Credits)</th>
-        <th scope="col-3">Avg. Rating</th>
+        <th scope="col-3">Name</th>
+        <th scope="col-3">Price (Credits)</th>
+        <th scope="col-2">Avg. Rating</th>
+        <th scope="col-2"></th>
+        <th scope="col-2"></th>
       </tr>
     </thead>
     <tbody>
       <% @products.each do |product| %>
           <tr class="text-center">
-            <td class="col-5"><%= link_to product.name, product_path(product) %></td>
-            <td class="col-4"><%= image_tag("credit.png") + product.cost %></td>
-            <td class="col-3">4.7</td>
+            <td class="col-4"><%= link_to product.name, product_path(product) %></td>
+            <td class="col-3"><%= image_tag("credit.png") + product.cost %></td>
+            <td class="col-2">4.7</td>
+            <td class="col-1"><%= link_to "Edit", edit_product_path(product), :class => "btn btn-warning" %></td>
+            <td class="col-2">
+              <%= link_to "Destroy", product_path(product),
+                                                    :class => "btn btn-danger ",
+                                                    :data => {:confirm => "You sure?",
+                                                    :method => "delete"} %>
+            </td>
           </tr>
       <% end %>
     </tbody>
