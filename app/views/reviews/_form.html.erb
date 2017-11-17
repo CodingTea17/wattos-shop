@@ -1,0 +1,10 @@
+<%= render('layouts/errors', :object => @review) %>
+
+<%= form_for [@product, @review] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= select_tag(:rating, options_for_select([['5',5], ['4',4], ['3',3], ['2',2], ['1',1]]), :class => "form-control col-1" )%>
+  <p><%= f.submit :class => "btn btn-success" %></p>
+<% end %>
