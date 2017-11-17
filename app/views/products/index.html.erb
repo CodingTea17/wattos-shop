@@ -2,6 +2,24 @@
   <div class="col-9">
     <h1 class="text-center">Current Inventory</h1>
     <p class="text-center"><%= link_to "Add a New Product", new_product_path(), :class => "btn btn-success" %></p>
+    <div class="dropdown">
+      Filter By:
+      <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Model
+      </button><br><br>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/products">All</a>
+        <a class="dropdown-item" href="?planet=Coruscant">Coruscant</a>
+        <a class="dropdown-item" href="?planet=Dagobah">Dagobah</a>
+        <a class="dropdown-item" href="?planet=Tatooine">Tatooine</a>
+        <a class="dropdown-item" href="?planet=Naboo">Naboo</a>
+        <a class="dropdown-item" href="?planet=Hoth">Hoth</a>
+        <a class="dropdown-item" href="?planet=Utapau">Utapau</a>
+        <a class="dropdown-item" href="?planet=Endor">Endor</a>
+        <a class="dropdown-item" href="?planet=Bespin">Bespin</a>
+        <a class="dropdown-item" href="?planet=Kashyyyk">Kashyyyk</a>
+      </div>
+    </div>
     <div class="digg_pagination mb-2">
       <div class="row justify-content-center">
         <%= will_paginate @products %>

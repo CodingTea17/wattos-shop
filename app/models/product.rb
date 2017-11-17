@@ -11,5 +11,8 @@ class Product < ActiveRecord::Base
     .joins(:reviews)
     .group("products.id")
     .order("reviews_count DESC")
-    .limit(1))}
+    .limit(1))
+  }
+
+  scope :by_planet, -> (planet) { where("origin like ?", "%#{planet}%")}
 end

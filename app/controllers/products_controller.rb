@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.index(params[:page])
+    @products = @products.by_planet(params[:planet]) if params[:planet].present?
   end
 
   def show
