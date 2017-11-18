@@ -8,10 +8,10 @@ Watto was looking for a new site for his junk yard. He's got a little of everyth
 
 ### Setup
 1. Clone the project and `cd wattos-shop`
-* Execute `bundle`
-* Fire up a postgresql server and execute `rails setup` or `rails db:create db:migrate db:test:prepare db:seed`
-* Run `rails c` and visit localhost:3000 in your favorite browser to check it about
-* Specs can be ran by executing `rspec` inside of the project directory
+1. Execute `bundle`
+1. Fire up a postgresql server and execute `rails db:setup` or `rails db:create db:migrate db:test:prepare db:seed`
+1. Run `rails c` and visit localhost:3000 in your favorite browser to check it about
+1. Specs can be ran by executing `rspec` inside of the project directory
 
 ### Technologies Used
 * HTML
