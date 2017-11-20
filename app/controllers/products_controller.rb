@@ -15,8 +15,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:success] = "Product successfully added!"
       redirect_to products_path
     else
+      flash[:danger] = "IT'S A TRAP!!"
       render :new
     end
   end
@@ -28,8 +30,10 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
+      flash[:success] = "Update was success"
       redirect_to products_path
     else
+      flash[:danger] = "IT'S A TRAP!!"
       render :edit
     end
   end

@@ -23,6 +23,7 @@ Watto was looking for a new site for his junk yard. He's got a little of everyth
 
 ### Known Bugs
 * If you wish to re-seed the db you HAVE to run `rails db:reset`. This is due to the reviews being assigned to the products with ids 1-50.
+* The error pages butcher the bootstrap form styling.
 
 ### License
 *This website is licensed under the MIT License*
