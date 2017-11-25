@@ -35,6 +35,8 @@ gem 'faker'
 # gem 'capistrano-rails', group: :development
 gem 'will_paginate'
 
+gem 'devise'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
